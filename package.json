@@ -1,0 +1,16 @@
+{
+  "name": "amedia-site",
+  "version": "1.0.1",
+  "private": true,
+  "description": "AMedia 介绍站：镜台歌词与莫奈背景",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
