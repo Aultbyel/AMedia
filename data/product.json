@@ -1,0 +1,26 @@
+{
+  "name": "AMedia",
+  "tagline": "重新定义播放器",
+  "taglineEn": "Redefined the player",
+  "version": "1.0.1",
+  "versionCode": 1219,
+  "applicationId": "com.aradio.music",
+  "license": "AGPL-3.0",
+  "basedOn": {
+    "name": "Folia",
+    "url": "https://github.com/chthollyphile/folia-major"
+  },
+  "inspiredBy": "Mineradio",
+  "requirements": {
+    "android": "Android 7.0 及以上（API 24）",
+    "node": "Node.js 24 及以上（Web / 从源码运行）",
+    "desktop": "Windows、macOS、Linux"
+  },
+  "releasesPage": "https://github.com/Aultbyel/AMedia/releases",
+  "downloads": {
+    "android": null,
+    "windows": null,
+    "macos": null,
+    "linux": null
+  }
+}

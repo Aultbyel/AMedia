@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AMedia</title>
+  <meta name="description" content="AMedia 是一个全屏歌词音乐播放器。这一页用镜台歌词样式和莫奈背景介绍它，并附下载与版本信息。" />
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="monet-bg" aria-hidden="true"></canvas>
+  <div class="monet-veil" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav-brand" href="#top">
+      <img src="./assets/amedia-logo.png" alt="" width="32" height="32" />
+      AMedia
+    </a>
+    <nav>
+      <a href="#styles">样式</a>
+      <a href="#features">功能</a>
+      <a href="#download">下载</a>
+      <a href="#details">说明</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="diorama" id="diorama" aria-hidden="true">
+        <div class="diorama-fog"></div>
+        <div class="diorama-world" id="diorama-world"></div>
+      </div>
+      <div class="hero-copy">
+        <h1>AMedia</h1>
+        <p class="tagline">重新定义播放器</p>
+        <p class="lede">全屏歌词音乐播放器，当前版本 1.0.1。首屏这首演示用的是镜台歌词，背景是莫奈。</p>
+        <p class="cta">
+          <a href="#download">下载</a>
+          <a href="#details">说明</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="styles" class="section">
+      <h2>镜台和莫奈</h2>
+      <p>首屏用的就是这两个。镜台把正在唱的句子放在中间，上一句退到后面，下一句从远处过来；周围是带网格的方块和柱体，镜头跟着往前推。</p>
+      <figure class="preview">
+        <img src="./assets/preview-diorama.png" alt="镜台样式：三维景深里的歌词和网格形体" />
+        <figcaption>播放器里的镜台画面</figcaption>
+      </figure>
+      <p>莫奈背景从封面裁出，先做模糊，再按明暗套上主题色。可以铺满全屏，也可以只占半边，并做轻微平移。</p>
+    </section>
+
+    <section id="features" class="section">
+      <h2>功能</h2>
+      <dl class="facts">
+        <div>
+          <dt>歌词样式</dt>
+          <dd>除了镜台，还有浮名、流光、倾诉、时计等全屏样式，参数可以调，窗口大小变化时会重新排版。</dd>
+        </div>
+        <div>
+          <dt>歌词和封面</dt>
+          <dd>在线歌曲会自动载入歌词和封面。本地曲库可以匹配在线歌词，也可以读同目录的 LRC、VTT、TTML 等文件。</dd>
+        </div>
+        <div>
+          <dt>主题配色</dt>
+          <dd>可以根据歌曲和歌词生成背景颜色与视觉参数。</dd>
+        </div>
+        <div>
+          <dt>曲库</dt>
+          <dd>网易云、酷狗、QQ 音乐、Navidrome，以及本地文件。桌面端还接入波点音乐、YouTube Music、Spotify 和汽水音乐。</dd>
+        </div>
+        <div>
+          <dt>Android</dt>
+          <dd>用 Capacitor 打包，手机里跑 Node 后端处理音乐服务。有原生播放、媒体会话、锁屏控制，也可以把摄像头画面当作 AR PLAY 背景。</dd>
+        </div>
+        <div>
+          <dt>桌面和网页</dt>
+          <dd>有 Windows、macOS、Linux 桌面版，也可以部署成网页。</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="section">
+      <h2>其他样式</h2>
+      <div class="gallery">
+        <figure>
+          <img src="./assets/preview-fume.png" alt="浮名样式预览" />
+          <figcaption>浮名</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/preview-lumi.png" alt="流光样式预览" />
+          <figcaption>流光</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/preview-diorama.png" alt="镜台样式预览" />
+          <figcaption>镜台</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="download" class="section">
+      <h2>下载</h2>
+      <p>当前版本是 1.0.1，Android 版本号 1219。安装包还没有公开，发布后会放在 GitHub Releases，这一页的链接也会一起更新。</p>
+      <ul class="downloads" id="download-grid">
+        <li data-platform="android">
+          <strong>Android</strong>
+          <span>Android 7.0 及以上，包名 <code>com.aradio.music</code></span>
+          <a class="disabled" aria-disabled="true">即将发布</a>
+        </li>
+        <li data-platform="windows">
+          <strong>Windows</strong>
+          <span>桌面安装包，自带运行环境</span>
+          <a class="disabled" aria-disabled="true">即将发布</a>
+        </li>
+        <li data-platform="macos">
+          <strong>macOS</strong>
+          <span>Apple silicon 和 Intel</span>
+          <a class="disabled" aria-disabled="true">即将发布</a>
+        </li>
+        <li data-platform="linux">
+          <strong>Linux</strong>
+          <span>桌面安装包</span>
+          <a class="disabled" aria-disabled="true">即将发布</a>
+        </li>
+      </ul>
+      <p class="releases-note" id="releases-note" hidden></p>
+    </section>
+
+    <section id="details" class="section">
+      <h2>说明</h2>
+      <table class="details">
+        <tbody>
+          <tr><th>名称</th><td>AMedia</td></tr>
+          <tr><th>版本</th><td>1.0.1</td></tr>
+          <tr><th>Android 版本号</th><td>1219</td></tr>
+          <tr><th>Android 包名</th><td><code>com.aradio.music</code></td></tr>
+          <tr><th>系统要求</th><td>Android 7.0 及以上（API 24）。桌面版支持 Windows、macOS、Linux。从源码或网页运行需要 Node.js 24 及以上。</td></tr>
+          <tr><th>技术</th><td>React、TypeScript、Vite。Android 用 Capacitor，并内嵌 Node。桌面版用 Electron。</td></tr>
+          <tr><th>曲库</th><td>网易云、酷狗、QQ 音乐、Navidrome、本地文件。桌面端另有波点音乐、YouTube Music、Spotify、汽水音乐。</td></tr>
+          <tr><th>许可</th><td>AGPL-3.0</td></tr>
+          <tr><th>上游</th><td>基于 <a href="https://github.com/chthollyphile/folia-major">Folia</a>，并借鉴了 Mineradio</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>AMedia 1.0.1。基于 Folia，许可为 AGPL-3.0。应用图标和样式预览图来自 AMedia / Folia。</p>
+  </footer>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
